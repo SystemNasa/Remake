@@ -1,0 +1,190 @@
+local Sound = Instance.new("Sound",game.CoreGui)
+Sound.SoundId = "rbxassetid://5568992074"
+Sound:Play()
+game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "Made by Zen.#3732",["Text"] = "PRESS R 2 TIMES TO START,  E to chase, T to appear and Y for evil laugh",["Duration"] = 40,["Button1"] = "Okay."})
+loadstring(game:HttpGet('https://pastebin.com/raw/EqWGNwZJ'))()
+wait(1)
+local Client = game:GetService"Players".LocalPlayer
+
+function Godmode()
+   local Attacking = Client.Character:FindFirstChild"BodyEffects".Attacking
+   
+    if Attacking then
+        Attacking:Destroy()
+    end
+end
+Godmode()
+
+Client.CharacterAdded:Connect(function()
+    wait(1)
+    
+    Godmode()
+end)
+for i,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Seat") or v:IsA("VehicleSeat") then
+			v:Destroy()
+		end
+end
+wait(0.3)
+loadstring(game:HttpGet('https://pastebin.com/raw/41NYAQb3'))()
+local UserInputService = game:GetService("UserInputService")
+
+function StopAudio()
+	game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):FindFirstChild('BOOMBOXSOUND'):Stop();
+end;
+
+function Stop(i, v)
+	local w = coroutine.wrap(function()
+		wait(game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):FindFirstChild('BOOMBOXSOUND').TimeLength-0.1)
+		if game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):FindFirstChild('BOOMBOXSOUND').SoundId == 'rbxassetid://'..i and OriginalKeyUpValue == v then
+			StopAudio();
+		end;
+	end);
+	w();
+end;
+
+function Play(i, v, w)
+	if game:GetService('Players').LocalPlayer:FindFirstChildOfClass('Backpack'):FindFirstChild('[Boombox]') then
+		local Tool = nil;
+		if game:GetService('Players').LocalPlayer.Character:FindFirstChildOfClass('Tool') and w == true then
+			Tool = game:GetService('Players').LocalPlayer.Character:FindFirstChildOfClass('Tool')
+			game:GetService('Players').LocalPlayer.Character:FindFirstChildOfClass('Tool').Parent = game:GetService('Players').LocalPlayer:FindFirstChildOfClass('Backpack');
+		end;
+		game:GetService('Players').LocalPlayer:FindFirstChildOfClass('Backpack'):FindFirstChild('[Boombox]').Parent = game:GetService('Players').LocalPlayer.Character;
+		game:GetService('ReplicatedStorage'):FindFirstChild('MainEvent'):FireServer('Boombox', i);
+		game:GetService('Players').LocalPlayer.Character:FindFirstChild('[Boombox]').RequiresHandle = false;
+		if game:GetService('Players').LocalPlayer.Character:FindFirstChild('[Boombox]'):FindFirstChild('Handle') then
+			game:GetService('Players').LocalPlayer.Character:FindFirstChild('[Boombox]'):FindFirstChild('Handle'):Destroy();
+		end
+		game:GetService('Players').LocalPlayer.Character:FindFirstChild('[Boombox]').Parent = game:GetService('Players').LocalPlayer:FindFirstChildOfClass('Backpack')
+		if game:GetService('Players').LocalPlayer:FindFirstChildOfClass('PlayerGui'):FindFirstChild('MainScreenGui'):FindFirstChild('BoomboxFrame') then
+			game:GetService('Players').LocalPlayer:FindFirstChildOfClass('PlayerGui'):FindFirstChild('MainScreenGui'):FindFirstChild('BoomboxFrame').Visible = false;
+		end;
+		if Tool ~= true then
+			if Tool then
+				Tool.Parent = game:GetService('Players').LocalPlayer.Character
+			end;
+		end;
+		if v == true then
+			game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):WaitForChild('BOOMBOXSOUND');
+			local x = coroutine.wrap(function()
+				repeat wait() until game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):FindFirstChild('BOOMBOXSOUND').SoundId == 'rbxassetid://'..i and game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):FindFirstChild('BOOMBOXSOUND').TimeLength > 0.01
+				OriginalKeyUpValue = OriginalKeyUpValue + 1;
+				Stop(i, OriginalKeyUpValue);
+			end);
+			x();
+		end;
+	end;
+end;
+
+UserInputService.InputBegan:connect(function(input,Chatting)
+    if Chatting then return end
+        if input.KeyCode==Enum.KeyCode.E then
+			Play(1837810082, true, true)
+			wait(19)
+			game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):FindFirstChild('BOOMBOXSOUND'):Stop();
+        end
+end)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+UserInputService.InputBegan:connect(function(input,Chatting)
+    if Chatting then return end
+        if input.KeyCode==Enum.KeyCode.E then
+loadstring(game:HttpGet('https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/uno/follow%20close'))()
+end
+end)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+mouse = plr:GetMouse()
+
+mouse.KeyDown:connect(function(key)
+if key == "e" then
+if mouse.Target then
+hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+wait(17)
+hum.CFrame = CFrame.new(-990.9939575195312, -49.344234466552734, -976.0829467773438)
+end
+end
+end)
+UserInputService.InputBegan:connect(function(input,Chatting)
+    if Chatting then return end
+        if input.KeyCode==Enum.KeyCode.Y then
+            wait(0.1)
+local player = game.Players.LocalPlayer
+
+local Anim = Instance.new("Animation")
+            Anim.AnimationId = "rbxassetid://3361426436"
+            
+            player.Character.Animate.Disabled = true
+            local toplay = player.Character.Humanoid.Animator:LoadAnimation(Anim)
+            toplay:Play(0.1,1,1)
+            con = player.Character.Humanoid.Running:connect(function(speed)
+                if speed > 0.5 then
+                    player.Character.Animate.Disabled = false
+                    toplay:Stop(0.1)
+                    con:Disconnect()
+                end
+            end)
+            jumpcon = player.Character.Humanoid.Jumping:connect(function()
+                player.Character.Animate.Disabled = false
+                toplay:Stop(0.1)
+                jumpcon:Disconnect()
+            end)
+            for i,v in pairs(active) do
+                v:Stop(0.1)
+            end
+        end
+end)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+mouse = plr:GetMouse()
+
+mouse.KeyDown:connect(function(key)
+if key == "y" then
+if mouse.Target then
+hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+wait(5)
+hum.CFrame = CFrame.new(-990.9939575195312, -49.344234466552734, -976.0829467773438)
+end
+end
+end)
+
+UserInputService.InputBegan:connect(function(input,Chatting)
+    if Chatting then return end
+        if input.KeyCode==Enum.KeyCode.T then
+            Play(1843207779, true, true)
+            wait(4)
+			game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):FindFirstChild('BOOMBOXSOUND'):Stop();
+        end
+end)
+UserInputService.InputBegan:connect(function(input,Chatting)
+    if Chatting then return end
+        if input.KeyCode==Enum.KeyCode.Y then
+			Play(132179181, true, true)
+			wait(5)
+			game:GetService('Players').LocalPlayer.Character:FindFirstChild('LowerTorso'):FindFirstChild('BOOMBOXSOUND'):Stop();
+        end
+end)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+mouse = plr:GetMouse()
+
+mouse.KeyDown:connect(function(key)
+if key == "t" then
+if mouse.Target then
+hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+wait(1.3)
+hum.CFrame = CFrame.new(-990.9939575195312, -49.344234466552734, -976.0829467773438)
+end
+end
+end)
+wait(10)
+local Sound = Instance.new("Sound",game.CoreGui)
+Sound.SoundId = "rbxassetid://7474063704"
+Sound:Play()
+game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "Chucky script",["Text"] = "I will fix and update it soon, the script isnt finished",["Duration"] = 10,["Button1"] = "Okay."})
+wait(30)
+local Sound = Instance.new("Sound",game.CoreGui)
+Sound.SoundId = "rbxassetid://7518627362"
+Sound:Play()
+game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "Chucky script",["Text"] = "This script is free, if you bought it you, got scammed",["Duration"] = 10,["Button1"] = "Okay."})
