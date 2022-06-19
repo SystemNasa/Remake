@@ -25,6 +25,15 @@ for i,v in pairs(workspace:GetDescendants()) do
 			v:Destroy()
 		end
 end
+local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("[Knife]")
+local plr = game.Players.LocalPlayer
+    local savedarmourpos = plr.Character.HumanoidRootPart.Position
+    plr.Character.HumanoidRootPart.CFrame = CFrame.new(-275.23883056640625, 22.962263107299805, -234.98675537109375)
+    wait(.2)
+    fireclickdetector(game.Workspace.Ignored.Shop['[Knife] - $150'].ClickDetector)
+    plr.Character.HumanoidRootPart.CFrame = CFrame.new(savedarmourpos)
+    wait(1)
+    game.Players.LocalPlayer.Backpack:FindFirstChild("[Knife]").Parent = game.Players.LocalPlayer.Character
 wait(0.3)
 loadstring(game:HttpGet('https://pastebin.com/raw/41NYAQb3'))()
 local UserInputService = game:GetService("UserInputService")
@@ -182,7 +191,7 @@ wait(10)
 local Sound = Instance.new("Sound",game.CoreGui)
 Sound.SoundId = "rbxassetid://7474063704"
 Sound:Play()
-game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "Chucky script",["Text"] = "I will fix and update it soon, the script isnt finished",["Duration"] = 10,["Button1"] = "Okay."})
+game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "Updated",["Text"] = "It can now hold a knife, and there will be more soon.",["Duration"] = 10,["Button1"] = "Okay."})
 wait(30)
 local Sound = Instance.new("Sound",game.CoreGui)
 Sound.SoundId = "rbxassetid://7518627362"
